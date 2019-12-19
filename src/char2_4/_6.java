@@ -39,13 +39,29 @@ class SortArray extends Array{
     }
 }
 
+class exchange extends Array{
+    public exchange(int len){
+        super(len);
+    }
+    public int[] getData(){
+        int [] temp1 = super.getData();
+        for (int i = 0 ; i < temp1.length/2 ; i ++){
+                int tempnum = temp1[i];
+                temp1[i] = temp1[temp1.length - i - 1];
+                temp1[temp1.length - i - 1] = tempnum;
+                System.out.println("test:" + temp1[i]);
+        }
+        return temp1;
+    }
+}
+
 public class _6 {
     public static void main(String args[]){
-        Array arr = new SortArray(3);
+        Array arr = new exchange(4);
         arr.add(100);
         arr.add(20);
         arr.add(3);
-        arr.add(40);
+        arr.add(5);
         int [] temp = arr.getData();
         for (int i = 0 ; i < temp.length ; i ++){
             System.out.print(temp[i] + "  ");
