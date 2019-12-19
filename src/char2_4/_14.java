@@ -1,4 +1,4 @@
-package char2_4_14;
+package char2_4;
 
 interface A{
     public static final String MSG = "hello";//全局常量

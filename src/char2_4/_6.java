@@ -23,26 +23,29 @@ class Array{
         }
     }
 
-    public void print(){
-        for(int i = 0 ; i < this.data.length ; i ++){
-            System.out.print(this.data[i] + " ");
-        }
-    }
-
     public int[] getData(){
         return this.data ;
     }
 }
 
+class SortArray extends Array{
+    public SortArray(int len){
+        super(len);//调用父类的有参构造方法，data数组就可以初始化
+    }
+    //因为父类中的getData方法不够排序类使用，所以进行覆写
+    public int[] getData(){
+        java.util.Arrays.sort(super.getData());
+        return super.getData();
+    }
+}
 
 public class _6 {
     public static void main(String args[]){
-        Array arr = new Array(3);
-        arr.add(10);
+        Array arr = new SortArray(3);
+        arr.add(100);
         arr.add(20);
-        arr.add(30);
+        arr.add(3);
         arr.add(40);
-        arr.print();
         int [] temp = arr.getData();
         for (int i = 0 ; i < temp.length ; i ++){
             System.out.print(temp[i] + "  ");
