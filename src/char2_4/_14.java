@@ -7,7 +7,11 @@ interface A{
 interface B{
     public abstract void get();
 }
-class X implements A,B{
+
+abstract class C_14{
+    public abstract void print();
+        }
+class X extends C_14 implements A,B{//同时使用继承和接口的时候，先使用extends再使用implements
     public void print(){
         System.out.println("hello print");
     }
@@ -15,7 +19,6 @@ class X implements A,B{
         System.out.println("hello get");
     }
 }
-
 
 
 public class _14 {
