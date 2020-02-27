@@ -7,6 +7,12 @@ package thread;
 * 4.创建Thread类对象，构造方法种传递Runnable接口的实现类对象
 * 5.调用Thread类中的start方法，开启新线程
 * */
+
+/*实现Runnable接口创建多线程的好处：
+* 1.避免了单继承的局限性
+* 2.增强了程序的扩展性，降低了程序的耦合性
+*   实现类中重写了run方法
+* */
 class Runnableimpl implements Runnable{
 
     @Override

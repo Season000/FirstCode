@@ -3,6 +3,8 @@ package _temp;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//例:shuru a,,1,"b,"""  输出 4  a   --   1      b,"
+
 //               a  ,  ,  1  ,  "b,"""
 //               a   --   1      b,"
 public class _temp2 {
