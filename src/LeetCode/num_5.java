@@ -9,6 +9,7 @@ package LeetCode;
 
 //123456789
 //12346789
+//123450789
 
 import java.util.Arrays;
 
@@ -17,47 +18,39 @@ class Solution_5 {
         if(Math.abs(first.length() - second.length()) > 1){
             return false;
         }
-        char [] firstarr = first.toCharArray();
-        char [] secondarr = second.toCharArray();
-//        Arrays.sort(firstarr);
-//        Arrays.sort(secondarr);
-        int i=0,j;
-        while (firstarr[i] == secondarr[i])
-            i++;
-        if(firstarr.length == secondarr.length){
-            j = i+1;
-            while (firstarr[j] == secondarr[j])
+        int count = 0;
+        int doulen = first.length() - second.length();
+        int i = 0, j = 0;
+        for(;i < first.length() && j < second.length();){
+            if(first.charAt(i) == second.charAt(j)){
+                i++;
                 j++;
-            if(j == firstarr.length)
-                return true;
-            else
-                return false;
+            }
+            else{
+                if(doulen > 0){
+                    i++;
+                }
+                if(doulen < 0){
+                    j++;
+                }
+                if(doulen == 0){
+                    i++;
+                    j++;
+                }
+                count++;
+                if(count > 1)
+                    return false;
+            }
         }
-        if(firstarr.length > secondarr.length){
-//            if(i==0 || i==secondarr.length-1)
-            j = i;
-            while (firstarr[j+1] == secondarr[j])
-                j++;
-            if(j == secondarr.length-1)
-                return true;
-            else
-                return false;
+        return true;
         }
-        else{
-            j = i;
-            while (firstarr[j] == secondarr[j+1])
-                j++;
-            if(j == firstarr.length-1)
-                return true;
-            else
-                return false;
-        }
-    }
 }
 public class num_5 {
     public static void main(String[] args) {
         Solution_5 temp = new Solution_5();
-        temp.oneEditAway("abced","abcd");
+//        temp.oneEditAway("abcc","cbcd");
+        System.out.println(temp.oneEditAway("ab","bc"));
+
 
     }
 }
